@@ -18,12 +18,12 @@ export default function Home() {
           {/* White Paper Button */}
           <div className="border hover:border-slate-900 rounded">
             <a
-              href="/whitepaper" // Replace with the actual link for the white paper
+              href="/whitepaper.pdf" // Replace with the actual link for the white paper
               target="_blank"
               rel="noopener noreferrer"
               className="wallet-adapter-button white-paper-button"
             >
-              White Paper
+              _Whitepaper
             </a>
           </div>
 
@@ -36,7 +36,18 @@ export default function Home() {
               rel="noopener noreferrer"
               className="wallet-adapter-button docs-button"
             >
-              Documents
+              _Documents
+            </a>
+          </div>
+
+          <div className="border hover:border-slate-900 rounded items-center justify-center">
+            <a
+              href="https://x.com/machina_5" // Correct URL for the documentation
+              target="_blank"
+              rel="noopener noreferrer"
+              className="wallet-adapter-button x-button"
+            >
+                 @machina_5
             </a>
           </div>
 

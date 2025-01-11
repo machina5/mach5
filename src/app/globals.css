@@ -48,8 +48,8 @@ body {
 
 /* Customize Docs Button */
 .docs-button {
-  background-color: #4B9E6A; /* Different background color for Docs */
-  color: #FFF; /* Text color */
+  background-color: #ACC7B4; /* Different background color for Docs */
+  color: #6A7BA2; /* Text color */
 }
 
 /* Customize M⁵ Exchange Button */
@@ -58,9 +58,16 @@ body {
   color: #FFF; /* Text color */
 }
 
+/* Customize M⁵ Exchange Button */
+.x-button {
+  background-color: #FFDFDE; /* Different background color for M⁵ Exchange */
+  color: #6A7BA2; /* Text color */
+}
+
 /* Optional: Apply hover effect to the specific buttons */
 .white-paper-button:hover,
 .docs-button:hover,
+.x-button:hover,
 .m5-exchange-button:hover {
   background-color: #FFDFDE;
   color: #6A7BA2;
@@ -68,6 +75,7 @@ body {
 
 .white-paper-button:active,
 .docs-button:active,
+.x-button:active,
 .m5-exchange-button:active {
   background-color: #5A6C89;
 }
