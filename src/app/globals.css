@@ -27,7 +27,7 @@ body {
   background-color: #6A7BA2; /* Change to your desired color */
   color: #FFDFDE;
   font-size: 12px; /* Smaller text */
-  padding: 1px 10px; /* Smaller padding */
+  padding: 10px 10px; /* Smaller padding */
   height: 30px; /* Adjust height */
   border-radius: 2px; /* Adjust button rounding */
   transition: background-color 0.3s ease;
@@ -37,6 +37,41 @@ body {
 .wallet-adapter-button:hover {
   background-color: #FFDFDE; /* Hover color */
 }
+
+
+
+/* Customize White Paper Button */
+.white-paper-button {
+  background-color: #3A5A99; /* Different background color for White Paper */
+  color: #FFF; /* Text color */
+}
+
+/* Customize Docs Button */
+.docs-button {
+  background-color: #4B9E6A; /* Different background color for Docs */
+  color: #FFF; /* Text color */
+}
+
+/* Customize M⁵ Exchange Button */
+.m5-exchange-button {
+  background-color: #9B4D95; /* Different background color for M⁵ Exchange */
+  color: #FFF; /* Text color */
+}
+
+/* Optional: Apply hover effect to the specific buttons */
+.white-paper-button:hover,
+.docs-button:hover,
+.m5-exchange-button:hover {
+  background-color: #FFDFDE;
+  color: #6A7BA2;
+}
+
+.white-paper-button:active,
+.docs-button:active,
+.m5-exchange-button:active {
+  background-color: #5A6C89;
+}
+
 
 canvas {
   position: fixed;
