@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom styles for WalletMultiButton */
+.wallet-adapter-button {
+  background-color: #6A7BA2; /* Change to your desired color */
+  color: #FFDFDE; /* Text color */
+  border-radius: 2px; /* Optional: Customize the border radius */
+  padding: 12px 20px; /* Optional: Customize padding */
+  transition: background-color 0.3s ease;
+}
+
+.wallet-adapter-button:hover {
+  background-color: #FFDFDE; /* Hover color */
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: #000; /* Optional: Set a dark background */
+}
