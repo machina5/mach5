@@ -1,15 +1,23 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function NeuronBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [numParticles, setNumParticles] = useState(70); // Set default numParticles to 70
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
 
     if (!canvas || !ctx) return;
+
+    // Detect if screen width is less than or equal to 768px (mobile size)
+    if (window.innerWidth <= 768) {
+      setNumParticles(20); // Set to 20 for mobile
+    } else {
+      setNumParticles(70); // Set to 70 for non-mobile (desktop)
+    }
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -24,7 +32,6 @@ export default function NeuronBackground() {
     }[] = [];
     const stars: { x: number; y: number; radius: number }[] = [];
     const numStars = 120; // Number of stars
-    let numParticles = 80;
     let maxConnectionDistance = 500;
     let newParticlesCount = 0; // Track the number of new particles added
     const maxNewParticles = 20; // Limit the total number of new particles to 30
@@ -190,7 +197,7 @@ export default function NeuronBackground() {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [numParticles]); // Added numParticles as dependency
 
   return <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full -z-10" />;
 }
