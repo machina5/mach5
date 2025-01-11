@@ -164,8 +164,8 @@ export default function NeuronBackground() {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * (Math.random() * 1 + 1), // Random speed
-          vy: (Math.random() - 0.5) * (Math.random() * 1 + 1), // Random speed
+          vx: (Math.random() - 0.5) * (Math.random() * 0.6 + 1), // Random speed
+          vy: (Math.random() - 0.5) * (Math.random() * 0.6 + 1), // Random speed
           wobble: Math.random() * Math.PI * 2,
           glow: Math.random() < 0.1, // 20% chance to glow
         });
