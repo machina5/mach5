@@ -11,13 +11,8 @@ export default function NeuronBackground() {
 
     if (!canvas || !ctx) return;
 
-    // Set up canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
-    // Scale down the canvas content for a zoomed-out effect
-    const zoomFactor = 0.8; // Adjust this value to control zoom (0.8 means 80% scale)
-    ctx.scale(zoomFactor, zoomFactor);
 
     const particles: {
       x: number;
@@ -28,11 +23,11 @@ export default function NeuronBackground() {
       glow: boolean;
     }[] = [];
     const stars: { x: number; y: number; radius: number }[] = [];
-    const numStars = 150; // Number of stars
-    let numParticles = 100;
-    let maxConnectionDistance = 600;
+    const numStars = 120; // Number of stars
+    let numParticles = 80;
+    let maxConnectionDistance = 500;
     let newParticlesCount = 0; // Track the number of new particles added
-    const maxNewParticles = 30; // Limit the total number of new particles to 30
+    const maxNewParticles = 20; // Limit the total number of new particles to 30
 
     // Initialize stars (static background)
     const initializeStars = () => {
@@ -51,9 +46,9 @@ export default function NeuronBackground() {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5, // Reduced speed
-          vy: (Math.random() - 0.5) * 0.5, // Reduced speed
-          wobble: Math.random() * Math.PI * 2,
+          vx: (Math.random() - 0.5) * 1.2,
+          vy: (Math.random() - 0.5) * 1.2,
+          wobble: Math.random() * Math.PI * 1.5,
           glow: Math.random() < 0.1, // 10% of particles will glow
         });
       }
@@ -111,6 +106,7 @@ export default function NeuronBackground() {
             const midX = (particles[i].x + particles[j].x) / 2;
             const midY = (particles[i].y + particles[j].y) / 2.1;
 
+            // Add a slower wobble effect to the midpoint
             const wobbleX =
               Math.sin(particles[i].wobble + particles[j].wobble) * 10; // Less exaggerated wobble
             const wobbleY =
@@ -127,8 +123,8 @@ export default function NeuronBackground() {
               particles[j].x,
               particles[j].y
             );
-            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / maxConnectionDistance})`;
-            ctx.lineWidth = 0.7;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / maxConnectionDistance})`; // Slightly dimmer lines
+            ctx.lineWidth = 0.7; // Thicker lines
             ctx.stroke();
           }
         }
@@ -137,7 +133,7 @@ export default function NeuronBackground() {
 
     // Animation loop
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width / zoomFactor, canvas.height / zoomFactor);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Draw stars first (static background)
       drawStars();
@@ -148,7 +144,7 @@ export default function NeuronBackground() {
         particle.y += particle.vy;
 
         // Update wobble phase slowly
-        particle.wobble += 0.01; // Slower wobble
+        particle.wobble = 0.02;
 
         // Bounce off edges
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
@@ -159,7 +155,7 @@ export default function NeuronBackground() {
       });
 
       // Gradually increase connection distance and add more particles
-      if (maxConnectionDistance < 200) {
+      if (maxConnectionDistance < 500) {
         maxConnectionDistance += 0.05;
       }
 
@@ -168,10 +164,10 @@ export default function NeuronBackground() {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5, // Randomized slower speed
-          vy: (Math.random() - 0.5) * 0.5, // Randomized slower speed
+          vx: (Math.random() - 0.5) * (Math.random() * 1 + 1), // Random speed
+          vy: (Math.random() - 0.5) * (Math.random() * 1 + 1), // Random speed
           wobble: Math.random() * Math.PI * 2,
-          glow: Math.random() < 0.1, // 10% chance to glow
+          glow: Math.random() < 0.1, // 20% chance to glow
         });
         newParticlesCount++; // Increment the counter for new particles
       }

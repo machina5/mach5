@@ -21,13 +21,18 @@ body {
 }
 
 /* Custom styles for WalletMultiButton */
+
+/* Custom wallet button styles */
 .wallet-adapter-button {
   background-color: #6A7BA2; /* Change to your desired color */
-  color: #FFDFDE; /* Text color */
-  border-radius: 2px; /* Optional: Customize the border radius */
-  padding: 12px 20px; /* Optional: Customize padding */
+  color: #FFDFDE;
+  font-size: 12px; /* Smaller text */
+  padding: 1px 23px; /* Smaller padding */
+  height: 40px; /* Adjust height */
+  border-radius: 2px; /* Adjust button rounding */
   transition: background-color 0.3s ease;
 }
+
 
 .wallet-adapter-button:hover {
   background-color: #FFDFDE; /* Hover color */
