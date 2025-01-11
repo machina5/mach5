@@ -42,3 +42,11 @@ canvas {
   z-index: -1;
   background: #000; /* Optional: Set a dark background */
 }
+
+.zoom-container {
+  transform: scale(0.8); /* Scale the entire content to 80% */
+  transform-origin: top center; /* Ensure scaling happens from the top center */
+  width: 100vw; /* Ensure it spans the full viewport width */
+  height: 100vh; /* Ensure it spans the full viewport height */
+  overflow: hidden; /* Prevent clipping at the edges */
+}
