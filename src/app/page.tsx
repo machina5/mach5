@@ -13,32 +13,34 @@ export default function Home() {
           <WalletMultiButton className="wallet-adapter-button" />
         </div>
 
-        {/* Other Buttons Container */}
-        <div className="flex flex-col space-y-4">
-          {/* White Paper Button */}
-          <div className="border hover:border-slate-900 rounded">
-            <a
-              href="/whitepaper.pdf" // Replace with the actual link for the white paper
-              target="_blank"
-              rel="noopener noreferrer"
-              className="wallet-adapter-button white-paper-button"
-            >
-              _Whitepaper
-            </a>
-          </div>
-
-          {/* Documentation Button */}
-          {/* Documentation Button */}
-          <div className="border hover:border-slate-900 rounded items-center justify-center">
+        <div className="border hover:border-slate-900 rounded items-center justify-center">
             <a
               href="https://machina5.gitbook.io/machina5" // Correct URL for the documentation
               target="_blank"
               rel="noopener noreferrer"
               className="wallet-adapter-button docs-button"
             >
-              _Documents
+              Learn More
             </a>
           </div>
+
+        {/* Other Buttons Container */}
+        {/* <div className="flex flex-col space-y-4"> */}
+          {/* White Paper Button */}
+          <div className="border hover:border-slate-900 rounded items-center justify-center">
+            <a
+              href="/whitepaper.pdf" // Replace with the actual link for the white paper
+              target="_blank"
+              rel="noopener noreferrer"
+              className="wallet-adapter-button white-paper-button"
+            >
+              Whitepaper
+            </a>
+          </div>
+
+          {/* Documentation Button */}
+          {/* Documentation Button */}
+          
 
           <div className="border hover:border-slate-900 rounded items-center justify-center">
             <a
@@ -64,7 +66,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </main>
   );
 }
