@@ -28,9 +28,10 @@ export default function Home() {
           </div>
 
           {/* Documentation Button */}
-          <div className="border hover:border-slate-900 rounded">
+          {/* Documentation Button */}
+          <div className="border hover:border-slate-900 rounded items-center justify-center">
             <a
-              href="/documentation" // Replace with the actual link for the documentation
+              href="https://machina5.gitbook.io/machina5" // Correct URL for the documentation
               target="_blank"
               rel="noopener noreferrer"
               className="wallet-adapter-button docs-button"
@@ -38,6 +39,7 @@ export default function Home() {
               Documents
             </a>
           </div>
+
 
           {/* M⁵ Exchange Button */}
           <div className="border hover:border-slate-900 rounded">
